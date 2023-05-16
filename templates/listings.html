@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<strong class="px-2 py-2 bg-blue-100"><h1>LISTINGS</h1></strong>
+<hr>
+
+
+{% for listing in listings %}
+
+    <div class="px-3 py-2 bg-gray-100 rounded-sm">
+        <strong class="text-3xl text-gray-900">{{ listing.title }}</strong>
+        <p class="text-gray-500 text-sm">{{listing.price}} Rupees/-</p>
+        <img src="{{ listing.image.url }}" alt="">
+        <p><a href="{% url 'listings' listing.id %}" class="mt-2">View detail</a></p>
+        <div class="mt-4">
+            <a href="{% url 'update' listing.id %}" class="text-blue-500 mr-3">Update</a>
+            <a href="{% url 'delete' listing.id %}" class="text-blue-500 ml-3">Delete</a>
+        </div>
+    </div>
+    <br>
+    
+{% endfor %}
+
+<div>
+    <h2>
+        <a href="{% url 'create' %}" class="px-2 py-2 bg-green-100 rounded-sm">Create a new listing.</a>
+    </h2>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="px-3 py-2 bg-gray-100 rounded-sm">
+    <h2>{{ listing.title }}</h2>
+    <br>
+    <p>Price : {{ listing.price }}</p>
+    <br>
+    <p>Bedrooms : {{ listing.num_bedrooms }}</p>
+    <br>
+    <p>Bathrooms : {{ listing.num_bathrooms }}</p>
+    <br>
+    <p>Address : {{ listing.address }}</p>
+</div>
+
+{% endblock %}
