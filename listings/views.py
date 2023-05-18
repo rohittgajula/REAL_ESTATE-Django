@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Listing
-from.forms import *
+from .forms import *
 
 # create, retrive, update, delete, list features we need to implement
 
